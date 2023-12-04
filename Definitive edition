@@ -1,0 +1,69 @@
+import random
+import tkinter as tk
+
+
+
+#Create an array with little string
+Little_String = ["a" , "b" , "c" , "d" , "e" , "f" , "g" , "h" , "j" , "k" , "l" , "m" , "n" , "o" , "p" , "q", "r" , "s" , "t" , "u" ,"v" , "x" , "y" ,"z"]
+
+Big_String = ["A" , "B" , "C" , "D" , "E" , "F" , "G" , "H" , "J" , "K" , "L" , "M" , "N" , "O" , "P" , "Q" , "R" , "S" , "T" , " U" , "V" , "X" , "Y" , "Z"]
+
+Special_Characters = ["." , "@" , "!" , "#" , "%" , "&" , "/" ,"(" , ")" , "="  , ";" , "-" , "-"]
+
+
+
+
+
+
+
+
+#Function to generate a password each time that is pressed the button
+def Generate_Password():
+    Password = [random.choice(Little_String) , random.choice(Big_String) , random.choice(Special_Characters) ,random.choice(Little_String) , random.choice(Big_String) , random.choice(Special_Characters) ,random.choice(Little_String) , random.choice(Big_String) , random.choice(Special_Characters) ,random.choice(Little_String) , random.choice(Big_String) , random.choice(Special_Characters)]
+
+
+    #Letters
+    Letter_0 = Password[0]
+    Letter_1 = Password[1]
+    Letter_2 = Password[2]
+    Letter_3 = Password[3]
+    Letter_4 = Password[4]
+    Letter_5 = Password[5]
+    Letter_6 = Password[6]
+    Letter_7 = Password[7]
+    Letter_8 = Password[8]
+    Letter_9 = Password[9]
+    Letter_10 = Password[10]
+    Letter_11 = Password[11]
+    Password_Good =[Letter_0 + Letter_1 + Letter_2 + Letter_3 + Letter_4 + Letter_5 + Letter_6 + Letter_7 + Letter_8 + Letter_9 + Letter_10 + Letter_11]
+    
+    
+    
+    #Create a name to show up the password 
+    Password_String = tk.Label(Screen , text = Password_Good)
+    Password_String.pack()
+    print(Password_Good)
+    
+    
+        
+
+    
+#Create a screen 
+Screen = tk.Tk()
+    
+#Title of the screen
+Screen.title("Generator of Passwords")
+    
+#Size of the screen 
+Screen.geometry("1920x1080")
+
+#Create a button to generate the password
+Button = tk.Button( Screen , text = "Generate Password" , command =  Generate_Password)
+
+
+
+#Putt the button on the position of the screen 
+Button.pack()
+
+#Start the loop for the screen
+Screen.mainloop()
